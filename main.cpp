@@ -58,15 +58,14 @@ int main() {
                 cout << "Enter code to search: ";
                 cin >> code;
                 if (tree.searchNode(code)) {
-                    tree.remove(code);
-                    cout << "Code deleted.\n";
+                    cout << "Code found.\n";
                 }
                 else {
                     cout << "Code not found.\n";
                 }
                 break;
 
-            case 4:
+            case 4: {
                 string oldCode, newCode;
                 cout << "Enter code to modify: ";
                 cin >> oldCode;
@@ -84,9 +83,23 @@ int main() {
                     cout << "Code not found.\n";
                 }
                 break;
+            }
+            
+            case 5:
+                cout << "\nCodes in BST:\n";
+                tree.displayInOrder();
+                break;
+
+            case 6:
+                cout << "Exiting program.\n";
+                break;
+
+                default:
+                    cout << "Invalid choice. Try again.\n";
         }
 
-    }
+
+    } while (choice != 6);
     
 	return 0;
 }
